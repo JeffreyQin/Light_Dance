@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'Azonix';
+    src: url('assets/fonts/Azonix.otf') format('opentype')
+}
+@font-face {
+    font-family: 'Moon';
+    src: url('assets/fonts/Moon.otf') format('opentype')
+}
+/* html, body {
+    margin: 0;
+    height: 100%;
+  }
+#app {
+    width: 100%;
+    height: 100%;
+    display: block;
+} */
+@keyframes glitchEffect {
+	0% {
+	  text-shadow: 2px 2px #6edbc5, -2px -2px #ff0000;
+	}
+	25% {
+	  text-shadow: -2px -2px #6edbc5, 2px 2px #ff0000;
+	}
+	50% {
+	  text-shadow: 2px 2px #6edbc5, -2px -2px #ff0000;
+	}
+	75% {
+	  text-shadow: -2px 2px #6edbc5, 2px -2px #ff0000;
+	}
+	100% {
+	  text-shadow: 2px 2px #6edbc5, -2px -2px #ff0000;
+	}
+  }
+#title {
+	position: absolute;
+	top: 16%;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display: block;
+    color: white;
+	font-family: "Azonix", sans-serif;
+	font-size: 120px;
+	animation: glitchEffect 8s infinite alternate;
+}
+
+body {
+	font-family: "Azonix", sans-serif;
+	margin: 0;
+    padding: 0;
+}
+
+#main_buttons {
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	text-align: center; 
+	justify-content: center;
+}
+
+@keyframes pulse {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.05);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+
+.play_button {
+	position: relative;
+	text-align: center; 
+	justify-content: center;
+	background: rgb(8, 23, 194);
+	color: white;
+	font-size: 40px;
+	/* transition: background 0.5s ease-in-out; */
+	font-family: "Azonix", sans-serif;
+	padding: 8px 20px 8px 20px;
+	border-radius: 4px;
+	border-width: 3px;
+	/* animation: pulse 3s infinite alternate; */
+}
+  
+.play_button:hover {
+	/*background: linear-gradient(to left top, #358b38, #7be280); */
+	background: rgb(61, 92, 194);
+	cursor: pointer;
+}
+
+#select-level {
+	position: relative;
+	text-align: center; 
+	display: flex;
+	justify-content: center; 
+	margin-top: 10px; 
+	color: white;
+	font-size: 40px;
+}
+  
+#level-label {
+	margin-right: 10px; 
+}
+
+#choose-map {
+	padding: 5px; 
+	font-size: 20px;
+	width: 150px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	font-family: "Moon", sans-serif;
+}
+
+.option {
+	font-family: "Moon", sans-serif;
+	width: 170px;
+	color: black;
+}
+
+/* body {
+	background-image: url('assets/white-abstract-background_23-2148831502.avif');
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed;
+} */
+
+#add-map {
+	position: absolute;   /* corrected this */
+	left: 50%;
+	top: 80%;
+	transform: translateX(-50%); /* for horizontal centering */
+	text-align: center; 
+	display: flex;
+	justify-content: center; 
+	color: white;
+	font-size: 20px;
+	flex-direction: column;
+}
+
+input[type="text"],
+input[type="file"],
+button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: white;
+}
+
+#map_name {
+	color: black;
+}
+
+#submit_map {
+	color: black;
+}
+
+#background_animation {
+	position: fixed;
+	z-index: -1;
+	top: 0%;
+}
+
+#github-link {
+    position: fixed;
+    bottom: 10px;     /* Adjust as needed */
+    left: 10px;   /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#github-link img {
+    width: 27.2px !important;   /* Adjust as needed */
+    height: 26px !important;  /* Adjust as needed */
+}
+
+#credits {
+	font-family: "Azonix", sans-serif;
+	font-size: 10px;
+	display: none;
+}

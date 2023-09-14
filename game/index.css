@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Azonix';
+    src: url('../assets/fonts/Azonix.otf') format('opentype')
+}
+@font-face {
+    font-family: 'Moon';
+    src: url('../assets/fonts/Moon.otf') format('opentype')
+}
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+#app {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#title {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	text-align: center;
+	z-index: 100000;
+	display: block;
+	font-family: "Moon", sans-serif;
+	font-size: 80px;
+}
+
+#mini_title {
+    position: fixed; 
+    top:2px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    font-family: "Azonix", sans-serif;
+}
+
+.debug_tools {
+    display: inline;
+}
+
+
+#back_button {
+    font-family: "Azonix", sans-serif;
+    position: relative;
+	top: 6px;
+    left: 10px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font: bold;
+    color: white;
+    z-index: 100000;
+}
+
+.button0 {
+    color: black;
+    display: block;
+	font-size: 12px;
+}
+
+.text0 {
+    display: block;
+    font-family: "Moon", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.h1 {
+    display: block;
+    font-family: "Azonix", monospace;
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.lives {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;     
+    transform: translateX(-50%);
+}
+#lives_count {
+    font-size: 18px;
+    display: block;
+    font-family: "Azonix", sans-serif;
+}
+
+#videos {
+    position: absolute;
+    display: flex;           /* Make this a flex container */
+    flex-direction: column;  /* Stack the children vertically */
+    align-items: center;     /* Center children vertically */
+    justify-content: center; /* Center children horizontally */
+    top: 0;                  /* Span the div to cover the full height of its parent/container */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 30px;        /* If you still want the margin on top */
+}
+
+@keyframes flashAnimation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.flashing-text {
+    animation: flashAnimation 2s infinite; /* 2 seconds to complete one cycle of fading out and back in */
+}

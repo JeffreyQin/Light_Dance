@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css"> 
+	<script async src="lightTracker/opencv.js"></script>
+	<script async src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js"></script>
+</head>
+<body>
+	<div class="debug_tools">
+		<div>
+			<a id="back_button" href="../">←Back</a>
+		</div>
+		<button id="move_block" type="button" class="button0" style="display: none;">Randomly Add a Block</button>
+		<p id="cursor_coordinates" class="text0"></p>
+		<p id="clock" class="text0" style="display: none;"></p>
+	</div>
+	<div class="titles">
+		<p id="mini_title"></p>
+		<p id="level_title" class="h1"></p>
+	</div>
+	<div class="hints">
+		<p id="explanation" class="text0">Use your phone flashlight or any other source of bright light to move your cursor. Try to stay away from bright spots in the background.</p>
+		<p id="warning" class="text0">Make sure our circle correctly traces your movements before playing!!</p>
+		<p id="music" class="text0">Don't forget to turn on sound!!</p>
+		<p id="skip" class="text0" style="display: none; margin-top: 10px;">Press c to continue</p>
+	</div>
+	<div id="videos" >
+		<video id="cam_input" style="display: none; -webkit-transform: scaleX(-1); transform: scaleX(-1);" height="480" width="640" style="display:block; margin-bottom: 20px;"></video>
+		<canvas id="canvas_output" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></canvas>
+	</div>
+	<div class="lives">
+		<p id="lives_count">Score: 999</p>
+	</div>
+	<div class="scripts">
+		<script>
+			let camera, renderer, generator;
+			let mainScene = {
+				"scene": null
+			};
+			let cursorX = 0, cursorY = 0;
+			let planeHeight, planeWidth;
+			let totalDestroyed = 0;
+			let levelTitle = sessionStorage.getItem("Active Map");
+			if (levelTitle) levelTitle = levelTitle.slice(0, -5);
+			let mapLength = (levelTitle ? JSON.parse(sessionStorage.getItem(levelTitle + ".json")) : []).length;
+		</script>
+		<script src="components/block.js" type="module"></script>
+		<script src="handleGameLoop.js" type="module"></script>
+		<script src="components/game_start.js" type="module"></script>
+		<script src="components/game_over.js" type = "module"></script>
+	</div>
+</body>
+</html>

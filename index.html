@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Dance</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <canvas id="app"></canvas>
+    <div id = "title">Light Dance</div>
+
+    <div id = "main_buttons">
+      <div>
+      <form>
+        <button class="play_button" type="submit" formaction="game">Play</button>
+      </form>
+      </div>
+      <div id="select-level">
+        <label id="level-label">Level: </label>
+        <select id="choose-map">
+          <option class="option" value="level_1.json">Level One</option>
+          <option class="option" value="level_2.json">Level Two</option>
+          <option class="option" value="level_3.json">Level Three</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="add-map">
+      <h3 id="add-title">Add Custom Map</h3>
+      <div id="file-name">
+        <label>Name of Map:</label>
+        <input type="text" id="map_name">
+      </div>
+      <div id="file-upload">
+        <input type="file" id="map_file">
+        <button id="submit_map">Submit</button>
+      </div>
+      <p id="error-message"></p>
+    </div>
+    
+    <a href="https://github.com/UncreativeName1/LightDance" id="github-link">
+      <div style="display: flex;">
+      <img src="./assets/github-icon.png" alt="GitHub Logo">
+      <p id="credits">By Gavin Song, Julian Birsan, Daniel Shen</p>
+      </div>
+    </a>
+
+    <div id="background_animation">
+    </div>
+
+    <div class="scripts">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js"></script>
+      <script>
+        let backgroundScene = {
+            "scene": null
+        };
+        let camera, renderer;
+      </script>
+      <script src="custom/addMap.js"></script>
+      <script src="backgrounds/initializeBackgroundScene.js"></script>
+      <script src="backgrounds/backgroundLight.js"></script>
+      <script type="module" src="backgrounds/backgroundAnimation.js"></script>
+    </div>
+    </div>
+  </body>
+</html>
